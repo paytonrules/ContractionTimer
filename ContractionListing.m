@@ -9,7 +9,7 @@ static ContractionListing *sharedListing = nil;
 {
 	if (sharedListing == nil)
 	{
-		sharedListing = [[ContractionListing alloc] init];
+		sharedListing = [[[ContractionListing alloc] init] autorelease];
 	}
 	
 	return sharedListing;
@@ -17,7 +17,7 @@ static ContractionListing *sharedListing = nil;
 
 -(id) init
 {
-	if(self = [super init])
+	if(self == [super init])
 	{
 		contractionList = [[NSMutableArray alloc] initWithCapacity: 20];
 	}
@@ -35,8 +35,6 @@ static ContractionListing *sharedListing = nil;
 
 -(void) stopContraction
 {
-	Contraction* first = [contractionList objectAtIndex: 0];
-	first.stop = [NSDate date];
 }
 
 -(int) count

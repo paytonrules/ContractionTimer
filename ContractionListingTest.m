@@ -86,13 +86,6 @@
 	[contractions stopContraction];
 }
 
--(void) testStartWithNewSharedListing {
-	ContractionListing *contractions = [ContractionListing sharedListing];
-	
-	STAssertEqualObjects([ContractionListing class], [contractions class], nil);
-	
-}
-
 -(NSMutableArray *) enumeratedContractions
 {
 	NSMutableArray *enumeratedContractions = [NSMutableArray arrayWithCapacity:10];
